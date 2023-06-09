@@ -41,7 +41,7 @@ class ble_JORDON(module.WirelessModule):
             if self.receiver.isConnected():
                 io.success("Connected on device : "+self.args["TARGET"])
 
-                io.chart(["Input","Action"],[["r","red"],["g","green"],["b","blue"],["party","party lights"],["on","on"],["off","off"]])
+                io.chart(["Input","Action"],[["r","red"],["g","green"],["b","blue"],["w","white"],["party","party lights"],["on","on"],["off","off"]])
 
                 while True:
 					
@@ -61,10 +61,13 @@ class ble_JORDON(module.WirelessModule):
                     elif key == "s":
                         # inject a OFF packet
                         self.send_value(0x9,'7e04016401ffff00ef')
+                    elif key == "w":
+                        # inject a OFF packet
+                        self.send_value(0x9,'7e070503ffffff10ef')
                     elif key == "on":
                         self.send_value(0x9,'7e04016401ffff00ef')
                     elif key == "off":
-                        self.send_value(0x9,'7e04016401ffff00ef')
+                        self.send_value(0x9,'7e04010001ffff00ef')
                     elif key == "party":
                                                         
                         for i in range(10):
