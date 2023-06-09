@@ -63,7 +63,7 @@ class ble_BULB(module.WirelessModule):
                         self.send_value(0x9,'7e04016401ffff00ef')
                     elif key == "w":
                         # inject a OFF packet
-                        self.send_value(0x9,'7e070503ffffff10ef')
+                        self.send_value(0x9,'7e0505014fffff08ef')
                     elif key == "on":
                         self.send_value(0x9,'7e04016401ffff00ef')
                     elif key == "off":
